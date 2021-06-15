@@ -19,7 +19,7 @@ class Premium extends User {
     }
   }
   public function getDiscount() {
-    return $this->discount;????*/
+    return $this->discount;              ????*/
   }
 
 }

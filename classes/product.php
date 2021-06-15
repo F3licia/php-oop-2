@@ -1,21 +1,20 @@
 <?php
+require_once(__DIR__ . "./categoryProduct.php");
 
 class Item {
-    public $code;
+    public $id;
     public $title;
-    public $category;
     public $pieces;
     public $price;
-    public $currency = "euro";
+    public $category;
 
-    function __construct($title, $price, $currency) {
-        $this->setItemTitle($title);
-        $this->setPriceItem($price);
+    function __construct($title, $price) {
+      $this->setItemTitle($title);
+      $this->setPriceItem($price);
        
     }
 
     public function setItemTitle($value) {
-        // controlli
         $this->title = $value;
       }
       public function getItem() {
@@ -23,11 +22,18 @@ class Item {
       }
 
       public function setPriceItem($value) {
-        // controlli
         $this->price = $value;
       }
       public function getPrice() {
         return $this->price;
+      }
+
+      public function setCategory($value) {
+        // controlli
+        $this->category = $value;
+      }
+      public function getCategory() {
+        return $this-> category;
       }
 
 }

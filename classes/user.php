@@ -4,14 +4,13 @@ class User {
     public $userName;
     public $userEmail;
     public $address;
-    public $registered = 2018;
+    public $registered;
     public $paymentMethod;
     public $subscrived = false;
 
     function __construct($userName, $userEmail) {
         $this->setUserName($userName);
-        $this->setEmail($userEmail);
-       
+        $this->setEmail($userEmail);   
     }
 
     public function setUserName($value) {
@@ -38,10 +37,7 @@ class User {
       return $this-> paymentMethod;
     }
 
-    //default utenti ordinarii
-    public function setSubscription($value) {
-      $this->subscrived = false;
-    }
+   
     
 
 }
