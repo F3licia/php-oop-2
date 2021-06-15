@@ -1,12 +1,12 @@
 <?php
 
 class Item {
-    protected $code;
-    protected $title;
-    protected $category;
-    protected $pieces;
-    protected $price;
-    protected $currency = "euro";
+    public $code;
+    public $title;
+    public $category;
+    public $pieces;
+    public $price;
+    public $currency = "euro";
 
     function __construct($title, $price, $currency) {
         $this->setItemTitle($title);

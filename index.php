@@ -11,14 +11,24 @@ BONUS: Gestite eventuali eccezioni che si possono verificare (es: carta di credi
 
 require_once("./classes/user.php");
 require_once("./classes/merch.php");
-require_once("./classes/payments.php");
+require_once("./classes/cards.php");
+require_once("./classes/premiumUser.php");
+
+
+// Istanza user implementata;
 
 $user = new User("Mario", "mario.rossi@gmail.com");
+
+$c = new Card("0000000000000", "Rossi Mario");
+$user->setPaymentMethod($c);
 var_dump($user);
 
-$item = new Item("phone", "100", "");
-var_dump($item);
 
-$paymentMode= new Payment("credit card", [$user]);
-var_dump($paymentMode);
+
+// Classe utente premium ereditata;
+
+$premiumUser = new Premium ("Maria", "maria.rossi@gmail.com");
+var_dump($premiumUser);
+
+
 ?>
