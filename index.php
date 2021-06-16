@@ -17,7 +17,7 @@ require_once("./classes/premiumUser.php");
 
 
 // Istanza user implementata;
-$user = new User("Mario", "mario.rossi@gmail.com");
+$user = new User("Mario", "mario.rossi@gmail.com", "2019-01-01");
 
 $c = new Card("0000000000000", "Rossi Mario");
 $user->setPaymentMethod($c);
@@ -26,7 +26,7 @@ var_dump($user);
 
 
 // Classe utente premium ereditata;
-$premiumUser = new Premium ("Maria", "maria.rossi@gmail.com");
+$premiumUser = new Premium ("Maria", "maria.rossi@gmail.com","2019-01-01");
 var_dump($premiumUser);
 
 // Categoria prodotti;

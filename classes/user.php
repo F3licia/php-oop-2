@@ -8,9 +8,10 @@ class User {
     public $paymentMethod;
     public $subscrived = false;
 
-    function __construct($userName, $userEmail) {
+    function __construct($userName, $userEmail, $registered) {
         $this->setUserName($userName);
-        $this->setEmail($userEmail);   
+        $this->setEmail($userEmail);
+        $this->setRegistrationDate($registered);
     }
 
     public function setUserName($value) {
@@ -37,6 +38,13 @@ class User {
       return $this-> paymentMethod;
     }
 
+    public function setRegistrationDate($value) {
+      // controlli
+      $this->registered = $value;
+    }
+    public function getRegistrationDate() {
+      return $this-> registered;
+    }
    
     
 
