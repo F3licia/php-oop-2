@@ -13,11 +13,10 @@ class Premium extends User {
   }
 
   public function setDiscount($discount) {
-    if( date('Y') - date('Y', strtotime($this->registered)) >= 2){
-      $this->discount = 50;
-   }else{
-   $this->discount = 0;} 
-  }
+    $val = date('Y') - date('Y', strtotime($this->registered));
+      $this->discount = $val*10;
+    }
+  
   public function getDiscount() {
     return $this->discount;          
   }
