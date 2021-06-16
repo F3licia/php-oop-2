@@ -1,12 +1,13 @@
 <?php
 require_once(__DIR__ . "./cards.php");
+require_once(__DIR__ . "/../errors/invalidMail.php");
 class User {
     public $userName;
     public $userEmail;
     public $address;
     public $registered;
     public $paymentMethod;
-    public $subscrived = false;
+    public $premiumSubscrived = false; //defoult utenti regular
 
     function __construct($userName, $userEmail, $registered) {
         $this->setUserName($userName);
@@ -15,15 +16,19 @@ class User {
     }
 
     public function setUserName($value) {
-        // controlli
-        $this->userName = $value;
+        if(is_numeric($value)){
+          throw new Exception("Si è verificato un errore");
+        }
+      $this->userName = $value;
     }
     public function getUserName() {
       return $this->userName;
     }
 
     public function setEmail($value) {
-      // controlli
+        if(!strstr($value, "@")){
+          throw new InvalidEmail();
+        }
       $this->userEmail = $value;
     }
     public function getEmail() {
@@ -31,16 +36,14 @@ class User {
     }
       
     public function setPaymentMethod($value) {
-      // controlli
       $this->paymentMethod = $value;
     }
     public function getPaymentMethod() {
       return $this-> paymentMethod;
     }
 
-    public function setRegistrationDate($value) {
-      // controlli
-      $this->registered = $value;
+    public function setRegistrationDate() {
+      $this->registered = date("D/M/Y");
     }
     public function getRegistrationDate() {
       return $this-> registered;

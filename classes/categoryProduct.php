@@ -27,6 +27,9 @@ class Category {
   }
 
   public function setWarranty($value) {
+    if(!is_bool($value)){
+      throw new Exception();
+    }
     $this->warranty = $value;
   }
   public function getWarranty() {
@@ -34,6 +37,9 @@ class Category {
   }
 
   public function setExpiryDate($value) {
+    if(!is_bool($value)){
+      throw new Exception();
+    }
     $this->expiry_date = $value;
   }
   public function getExpiryDate() {

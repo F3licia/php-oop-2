@@ -8,7 +8,7 @@ class Premium extends User {
 
   function __construct($name, $email, $registered) {
     parent::__construct($name, $email, $registered);
-    $this->subscrived = true;
+    $this->premiumSubscrived = true;
     $this->setDiscount($this->registered);
   }
 
