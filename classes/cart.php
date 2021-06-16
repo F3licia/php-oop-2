@@ -11,6 +11,9 @@ class Cart {
   }
 
   public function addProduct($product){
+    if(!is_object($product)){
+      throw new Exception("Si è verificato un errore");
+    }
     $this->products[] = $product;
   }
 
