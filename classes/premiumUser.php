@@ -4,17 +4,19 @@ require_once(__DIR__ . "./user.php");
 
 class Premium extends User {
   public $discount;
-  public $registered;
+  public $registeredOn;
 
-  function __construct($name, $email, $registered) {
-    parent::__construct($name, $email, $registered);
+  function __construct($userName, $userEmail, $registeredOn) {
+    parent::__construct($userName, $userEmail, $registeredOn);
     $this->premiumSubscrived = true;
-    $this->setDiscount($this->registered);
+    $this->setDiscount($this->registeredOn);
   }
 
-  public function setDiscount($discount) {
-    $val = date('Y') - date('Y', strtotime($this->registered));
+  public function setDiscount() {
+    $val = date('Y') - date('Y', strtotime($this->registeredOn));
       $this->discount = $val*10;
+
+
     }
   
   public function getDiscount() {

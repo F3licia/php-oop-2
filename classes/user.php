@@ -1,18 +1,21 @@
 <?php
 require_once(__DIR__ . "./cards.php");
+require_once(__DIR__ . "./premiumUser.php");
 require_once(__DIR__ . "/../errors/invalidMail.php");
+
+
 class User {
     public $userName;
     public $userEmail;
     public $address;
-    public $registered;
-    public $paymentMethod;
+    public $registeredOn;
+    public $memorizeMethod = [];
     public $premiumSubscrived = false; //defoult utenti regular
 
-    function __construct($userName, $userEmail, $registered) {
+    function __construct($userName, $userEmail, $registeredOn) {
         $this->setUserName($userName);
         $this->setEmail($userEmail);
-        $this->setRegistrationDate($registered);
+        $this->setRegistrationDate($registeredOn);
     }
 
     public function setUserName($value) {
@@ -34,19 +37,16 @@ class User {
     public function getEmail() {
       return $this->userEmail;
     }
-      
-    public function setPaymentMethod($value) {
-      $this->paymentMethod = $value;
-    }
-    public function getPaymentMethod() {
-      return $this-> paymentMethod;
-    }
 
     public function setRegistrationDate() {
-      $this->registered = date("D/M/Y");
+      $this->registeredOn = date("D/M/Y");
     }
     public function getRegistrationDate() {
-      return $this-> registered;
+      return $this-> registeredOn;
+    }
+
+    public function memorizeMethod($value){
+      $this->cards[] = $value;
     }
    
     
