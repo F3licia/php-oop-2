@@ -16,9 +16,7 @@ class Premium extends User {
     $val = date('Y') - date('Y', strtotime($this->registeredOn));
       $this->discount = $val*10;
 
-
     }
-  
   public function getDiscount() {
     return $this->discount;          
   }

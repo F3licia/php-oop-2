@@ -4,6 +4,7 @@ class Cart {
   private $userName;
   private $products = [];
   private $paymentMethod;
+  private $address;
 
   function __construct($userName) {
     $this->userName = $userName;

@@ -38,8 +38,8 @@ class User {
       return $this->userEmail;
     }
 
-    public function setRegistrationDate() {
-      $this->registeredOn = date("D/M/Y");
+    public function setRegistrationDate($value) {
+      $this->registeredOn = $value;
     }
     public function getRegistrationDate() {
       return $this-> registeredOn;
